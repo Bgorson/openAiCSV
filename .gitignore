@@ -1,0 +1,6 @@
+virtual
+.vscode
+database.json
+gift.csv
+file.txt
+__pycache__
