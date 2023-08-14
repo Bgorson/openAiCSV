@@ -4,7 +4,6 @@ import streamlit as st
 from dotenv import load_dotenv
 from langchain.agents import create_csv_agent
 from langchain.llms import OpenAI
-import os
 
 
 def main():
