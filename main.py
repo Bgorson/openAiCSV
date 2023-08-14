@@ -1,3 +1,4 @@
+import os
 from tempfile import NamedTemporaryFile
 
 import streamlit as st
@@ -15,9 +16,13 @@ def main():
     file = st.file_uploader("upload file", type="csv")
 
     if file:
-        # Specify your custom temporary directory
-        custom_temp_dir = "C:/Users/Maverick/Documents/coding/pythonGPT/temp"
-        with NamedTemporaryFile(delete=False, mode='w+b', dir=custom_temp_dir, suffix=".csv") as f:
+        # Get the absolute path of the current directory
+        current_dir = os.path.abspath(os.path.dirname(__file__))
+
+        # Construct the relative path for the custom_temp_dir
+        relative_temp_dir = os.path.join(current_dir, "temp")
+
+        with NamedTemporaryFile(delete=False, mode='w+b', dir=relative_temp_dir, suffix=".csv") as f:
             f.write(file.getvalue())
             f.flush()
             llm = OpenAI(temperature=0)
