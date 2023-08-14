@@ -10,8 +10,8 @@ from langchain.llms import OpenAI
 def main():
     load_dotenv()
 
-    st.set_page_config(page_title="Ask your CSV")
-    st.header("Ask your CSV")
+    st.set_page_config(page_title="Ask Giftology")
+    st.header("Ask Giftology")
 
     file = st.file_uploader("upload file", type="csv")
 
