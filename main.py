@@ -25,7 +25,7 @@ def main():
         with NamedTemporaryFile(delete=False, mode='w+b', dir=relative_temp_dir, suffix=".csv") as f:
             f.write(file.getvalue())
             f.flush()
-            llm = OpenAI(temperature=0)
+            llm = OpenAI(temperature=.7)
             user_input = st.text_input("Question here:")
             agent = create_csv_agent(llm, f.name, verbose=True)
             if user_input:
