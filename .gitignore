@@ -3,3 +3,4 @@ virtual
 database.json
 gift.csv
 file.txt
+.env
